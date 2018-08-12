@@ -25,7 +25,7 @@
                 })
                 .ConfigureServices(s => {
                     s.AddOcelot()
-                        .AddCacheManager();
+                        .AddConsul();
                 })
                 .ConfigureLogging((hostingContext, logging) =>
                 {
