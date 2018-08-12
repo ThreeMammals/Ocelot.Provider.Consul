@@ -1,4 +1,4 @@
-﻿namespace Ocelot.Cache.CacheManager.ManualTest
+﻿namespace Ocelot.Provider.Consul.ManualTest
 {
     using System.IO;
     using DependencyInjection;
@@ -25,7 +25,7 @@
                 })
                 .ConfigureServices(s => {
                     s.AddOcelot()
-                        .AddCacheManager(x => { x.WithDictionaryHandle(); });
+                        .AddCacheManager();
                 })
                 .ConfigureLogging((hostingContext, logging) =>
                 {

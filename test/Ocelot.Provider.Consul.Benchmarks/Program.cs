@@ -1,4 +1,4 @@
-﻿namespace Ocelot.Cache.CacheManager.Benchmarks
+﻿namespace Ocelot.Provider.Consul.Benchmarks
 {
     using BenchmarkDotNet.Running;
 

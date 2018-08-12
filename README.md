@@ -2,13 +2,13 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/8ry4ailt7rr5mbu7?svg=true)](https://ci.appveyor.com/project/TomPallister/ocelot-cache-cachemanager)
 Windows (AppVeyor)
-[![Build Status](https://travis-ci.org/ThreeMammals/Ocelot.Cache.CacheManager.svg?branch=master)](https://travis-ci.org/ThreeMammals/Ocelot.Cache.CacheManager) Linux & OSX (Travis)
+[![Build Status](https://travis-ci.org/ThreeMammals/Ocelot.Provider.Consul.svg?branch=master)](https://travis-ci.org/ThreeMammals/Ocelot.Provider.Consul) Linux & OSX (Travis)
 
-[![Coverage Status](https://coveralls.io/repos/github/ThreeMammals/Ocelot.Cache.CacheManager/badge.svg?branch=develop)](https://coveralls.io/github/ThreeMammals/Ocelot.Cache.CacheManager?branch=develop)
+[![Coverage Status](https://coveralls.io/repos/github/ThreeMammals/Ocelot.Provider.Consul/badge.svg?branch=develop)](https://coveralls.io/github/ThreeMammals/Ocelot.Provider.Consul?branch=develop)
 
 # Ocelot
 
-This package adds [CacheManager](https://github.com/MichaCo/CacheManager) support to Ocelot.
+This package adds [Consul](https://www.consul.io/) support to Ocelot via the package [Consul](https://github.com/PlayFab/consuldotnet).
 
 ## How to install
 
@@ -16,17 +16,17 @@ Ocelot is designed to work with ASP.NET Core only and it targets `netstandard2.0
 
 Install Ocelot and it's dependencies using NuGet. 
 
-`Install-Package Ocelot.Cache.CacheManager`
+`Install-Package Ocelot.Provider.Consul`
 
 Or via the .NET Core CLI:
 
-`dotnet add package Ocelot.Cache.CacheManager`
+`dotnet add package Ocelot.Provider.Consul`
 
-All versions can be found [here](https://www.nuget.org/packages/Ocelot.Cache.CacheManager/)
+All versions can be found [here](https://www.nuget.org/packages/Ocelot.Provider.Consul/)
 
 ## Documentation
 
-Please click [here](http://ocelot.readthedocs.io/en/latest/features/caching.html) for the Ocleot caching documentation. This includes lots of information and will be helpful if you want to understand the features Ocelot currently offers.
+Please click [here](http://ocelot.readthedocs.io/en/latest/features/servicediscovery.html) for the Ocleot serviec discovery documentation and [here](http://ocelot.readthedocs.io/en/latest/features/configuration.html#store-configuration-in-consul) for storing configuration in Consul. This includes lots of information and will be helpful if you want to understand the features Ocelot currently offers.
 
 ## Contributing
 

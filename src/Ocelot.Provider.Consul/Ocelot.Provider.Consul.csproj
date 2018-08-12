@@ -5,13 +5,13 @@
     <NETStandardImplicitPackageVersion>2.0.0</NETStandardImplicitPackageVersion>
     <NoPackageAnalysis>true</NoPackageAnalysis>
     <Description>Provides Ocelot extensions to use CacheManager.Net</Description>
-    <AssemblyTitle>Ocelot.Cache.CacheManager</AssemblyTitle>
+    <AssemblyTitle>Ocelot.Provider.Consul</AssemblyTitle>
     <VersionPrefix>0.0.0-dev</VersionPrefix>
-    <AssemblyName>Ocelot.Cache.CacheManager</AssemblyName>
-    <PackageId>Ocelot.Cache.CacheManager</PackageId>
+    <AssemblyName>Ocelot.Provider.Consul</AssemblyName>
+    <PackageId>Ocelot.Provider.Consul</PackageId>
     <PackageTags>API Gateway;.NET core</PackageTags>
-    <PackageProjectUrl>https://github.com/ThreeMammals/Ocelot.Cache.CacheManager</PackageProjectUrl>
-    <PackageProjectUrl>https://github.com/ThreeMammals/Ocelot.Cache.CacheManager</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/ThreeMammals/Ocelot.Provider.Consul</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/ThreeMammals/Ocelot.Provider.Consul</PackageProjectUrl>
     <PackageIconUrl>http://threemammals.com/images/ocelot_logo.png</PackageIconUrl>
     <RuntimeIdentifiers>win10-x64;osx.10.11-x64;osx.10.12-x64;win7-x64</RuntimeIdentifiers>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
@@ -30,8 +30,5 @@
     <PackageReference Include="StyleCop.Analyzers" Version="1.0.2">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="CacheManager.Core" Version="1.1.2" />
-    <PackageReference Include="CacheManager.Microsoft.Extensions.Configuration" Version="1.1.2" />
-    <PackageReference Include="CacheManager.Microsoft.Extensions.Logging" Version="1.1.2" />
   </ItemGroup>
 </Project>

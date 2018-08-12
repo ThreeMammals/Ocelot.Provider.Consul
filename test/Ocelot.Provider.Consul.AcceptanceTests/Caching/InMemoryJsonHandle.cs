@@ -1,4 +1,4 @@
-﻿namespace Ocelot.Cache.CacheManager.AcceptanceTests.Caching
+﻿namespace Ocelot.Provider.Consul.AcceptanceTests.Caching
 {
     using System;
     using System.Collections.Concurrent;
