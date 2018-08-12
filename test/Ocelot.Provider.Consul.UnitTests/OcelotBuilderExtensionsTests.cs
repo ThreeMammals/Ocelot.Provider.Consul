@@ -52,7 +52,7 @@
         {
             try
             {
-                _ocelotBuilder.AddConsul().AddConsulConfigurationPoller();
+                _ocelotBuilder.AddConsul().AddConfigStoredInConsul();
             }
             catch (Exception e)
             {

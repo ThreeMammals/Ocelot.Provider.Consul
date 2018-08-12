@@ -1,10 +1,12 @@
 ﻿namespace Ocelot.Provider.Consul
 {
+    using System.Threading.Tasks;
     using Logging;
+    using Microsoft.AspNetCore.Builder;
     using Microsoft.Extensions.DependencyInjection;
     using ServiceDiscovery;
 
-    public static class ProviderFactory
+    public static class ConsulProviderFactory
     {
         public static ServiceDiscoveryFinderDelegate Get = (provider, config, name) =>
         {
@@ -24,4 +26,6 @@
             return consulServiceDiscoveryProvider;
         };
     }
+
+    public delegate Task OcelotMiddlewareConfigurationDelegate(IApplicationBuilder builder);
 }

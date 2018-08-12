@@ -142,7 +142,7 @@
                 })
                 .ConfigureServices(s =>
                 {
-                    s.AddOcelot().AddConsul().AddConsulConfigurationPoller();
+                    s.AddOcelot().AddConsul().AddConfigStoredInConsul();
                 })
                 .Configure(app =>
                 {

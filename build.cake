@@ -17,7 +17,7 @@ var artifactsDir = Directory("artifacts");
 // unit testing
 var artifactsForUnitTestsDir = artifactsDir + Directory("UnitTests");
 var unitTestAssemblies = @"./test/Ocelot.Provider.Consul.UnitTests/Ocelot.Provider.Consul.UnitTests.csproj";
-var minCodeCoverage = 0d;
+var minCodeCoverage = 70d;
 var coverallsRepoToken = "coveralls-repo-token-ocelot";
 var coverallsRepo = "https://coveralls.io/github/ThreeMammals/Ocelot.Provider.Consul";
 

@@ -28,7 +28,7 @@
         [Fact]
         public void should_return_ConsulServiceDiscoveryProvider()
         {
-            var provider = ProviderFactory.Get(_provider, new ServiceProviderConfiguration("", "", 1, "", "", 1), "");
+            var provider = ConsulProviderFactory.Get(_provider, new ServiceProviderConfiguration("", "", 1, "", "", 1), "");
             provider.ShouldBeOfType<ConsulServiceDiscoveryProvider>();
         }
 
@@ -36,7 +36,7 @@
         public void should_return_PollingConsulServiceDiscoveryProvider()
         {
             var stopsPollerFromPolling = 10000;
-            var provider = ProviderFactory.Get(_provider, new ServiceProviderConfiguration("pollconsul", "", 1, "", "", stopsPollerFromPolling), "");
+            var provider = ConsulProviderFactory.Get(_provider, new ServiceProviderConfiguration("pollconsul", "", 1, "", "", stopsPollerFromPolling), "");
             provider.ShouldBeOfType<PollingConsulServiceDiscoveryProvider>();
         }
     }
