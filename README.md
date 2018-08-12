@@ -4,11 +4,11 @@
 Windows (AppVeyor)
 [![Build Status](https://travis-ci.org/ThreeMammals/Ocelot.Provider.Consul.svg?branch=master)](https://travis-ci.org/ThreeMammals/Ocelot.Provider.Consul) Linux & OSX (Travis)
 
-[![Coverage Status](https://coveralls.io/repos/github/ThreeMammals/Ocelot.Provider.Consul/badge.svg?branch=develop)](https://coveralls.io/github/ThreeMammals/Ocelot.Provider.Consul?branch=develop)
+[![Coverage Status](https://coveralls.io/repos/github/ThreeMammals/Ocelot.Provider.Consul/badge.svg)](https://coveralls.io/github/ThreeMammals/Ocelot.Provider.Consul)
 
 # Ocelot
 
-This package adds [Consul](https://www.consul.io/) support to Ocelot via the package [Consul](https://github.com/PlayFab/consuldotnet).
+This package adds [Consul](https://www.consul.io/) support to Ocelot via the package [Consul.NET](https://github.com/PlayFab/consuldotnet).
 
 ## How to install
 
