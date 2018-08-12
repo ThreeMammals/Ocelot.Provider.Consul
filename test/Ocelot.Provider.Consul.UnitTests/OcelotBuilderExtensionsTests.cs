@@ -13,12 +13,10 @@
 
     public class OcelotBuilderExtensionsTests
     {
-
         private readonly IServiceCollection _services;
         private IServiceProvider _serviceProvider;
         private readonly IConfiguration _configRoot;
         private IOcelotBuilder _ocelotBuilder;
-        private readonly int _maxRetries;
         private Exception _ex;
 
         public OcelotBuilderExtensionsTests()
@@ -27,7 +25,6 @@
             _services = new ServiceCollection();
             _services.AddSingleton<IHostingEnvironment, HostingEnvironment>();
             _services.AddSingleton(_configRoot);
-            _maxRetries = 100;
         }
 
         [Fact]

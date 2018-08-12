@@ -7,7 +7,6 @@
     using global::Consul;
     using Infrastructure.Extensions;
     using Logging;
-    using ServiceDiscovery.Configuration;
     using ServiceDiscovery.Providers;
     using Values;
 
@@ -20,9 +19,7 @@
 
         public ConsulServiceDiscoveryProvider(ConsulRegistryConfiguration config, IOcelotLoggerFactory factory, IConsulClientFactory clientFactory)
         {
-            ;
             _logger = factory.CreateLogger<ConsulServiceDiscoveryProvider>();
-
             _config = config;
             _consul = clientFactory.Get(_config);
         }

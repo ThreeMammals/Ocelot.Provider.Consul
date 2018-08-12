@@ -9,7 +9,6 @@
     using Logging;
     using Newtonsoft.Json;
     using Responses;
-    using ServiceDiscovery.Configuration;
 
     public class ConsulFileConfigurationRepository : IFileConfigurationRepository
     {

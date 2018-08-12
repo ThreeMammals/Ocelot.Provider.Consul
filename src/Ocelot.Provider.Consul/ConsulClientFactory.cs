@@ -2,7 +2,6 @@
 {
     using System;
     using global::Consul;
-    using ServiceDiscovery.Configuration;
 
     public class ConsulClientFactory : IConsulClientFactory
     {

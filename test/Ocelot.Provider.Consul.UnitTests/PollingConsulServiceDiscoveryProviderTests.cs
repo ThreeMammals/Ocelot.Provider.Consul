@@ -55,7 +55,7 @@
 
         private void WhenIGetTheServices(int expected)
         {
-            _provider = new PollingConsulServiceDiscoveryProvider(_delay, "", _factory.Object, _consulServiceDiscoveryProvider.Object);
+            _provider = new PollingConsulServiceDiscoveryProvider(_delay, _factory.Object, _consulServiceDiscoveryProvider.Object);
 
             var result = Wait.WaitFor(3000).Until(() => {
                 try

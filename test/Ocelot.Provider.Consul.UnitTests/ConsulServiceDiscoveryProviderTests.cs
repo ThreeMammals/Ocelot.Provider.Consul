@@ -37,12 +37,11 @@
             _consulHost = "localhost";
             _fakeConsulServiceDiscoveryUrl = $"http://{_consulHost}:{_port}";
             _serviceEntries = new List<ServiceEntry>();
-
             _factory = new Mock<IOcelotLoggerFactory>();
             _clientFactory = new ConsulClientFactory();
             _logger = new Mock<IOcelotLogger>();
             _factory.Setup(x => x.CreateLogger<ConsulServiceDiscoveryProvider>()).Returns(_logger.Object);
-
+            _factory.Setup(x => x.CreateLogger<PollingConsulServiceDiscoveryProvider>()).Returns(_logger.Object);
             var config = new ConsulRegistryConfiguration(_consulHost, _port, _serviceName, null);
             _provider = new ConsulServiceDiscoveryProvider(config, _factory.Object, _clientFactory);
         }

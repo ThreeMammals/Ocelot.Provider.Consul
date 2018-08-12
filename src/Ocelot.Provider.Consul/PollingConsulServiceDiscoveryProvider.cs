@@ -14,13 +14,10 @@
         private readonly Timer _timer;
         private bool _polling;
         private List<Service> _services;
-        private string _keyOfServiceInConsul;
 
-        public PollingConsulServiceDiscoveryProvider(int pollingInterval, string keyOfServiceInConsul, IOcelotLoggerFactory factory, IServiceDiscoveryProvider consulServiceDiscoveryProvider)
+        public PollingConsulServiceDiscoveryProvider(int pollingInterval, IOcelotLoggerFactory factory, IServiceDiscoveryProvider consulServiceDiscoveryProvider)
         {
-            ;
             _logger = factory.CreateLogger<PollingConsulServiceDiscoveryProvider>();
-            _keyOfServiceInConsul = keyOfServiceInConsul;
             _consulServiceDiscoveryProvider = consulServiceDiscoveryProvider;
             _services = new List<Service>();
 
@@ -34,7 +31,6 @@
                 _polling = true;
                 await Poll();
                 _polling = false;
-
             }, null, pollingInterval, pollingInterval);
         }
 
