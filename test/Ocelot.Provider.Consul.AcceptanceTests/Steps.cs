@@ -52,7 +52,7 @@
             _ocelotBuilder.ConfigureServices(s =>
             {
                 s.AddSingleton(_ocelotBuilder);
-                s.AddOcelot();
+                s.AddOcelot().AddConsul();
             });
             _ocelotBuilder.UseKestrel()
                 .UseUrls("http://localhost:5000")

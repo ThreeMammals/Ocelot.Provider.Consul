@@ -23,7 +23,8 @@
                         .AddJsonFile("ocelot.json", false, false)
                         .AddEnvironmentVariables();
                 })
-                .ConfigureServices(s => {
+                .ConfigureServices(s =>
+                {
                     s.AddOcelot()
                         .AddConsul();
                 })

@@ -5,14 +5,11 @@
     using System.IO;
     using System.Linq;
     using global::Consul;
-    using Infrastructure.Consul;
     using Logging;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
     using Moq;
-    using ServiceDiscovery.Configuration;
-    using ServiceDiscovery.Providers;
     using Shouldly;
     using TestStack.BDDfy;
     using Values;

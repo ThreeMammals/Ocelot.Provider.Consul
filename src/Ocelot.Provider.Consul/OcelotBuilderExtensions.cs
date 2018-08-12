@@ -5,6 +5,7 @@
     using Logging;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.DependencyInjection.Extensions;
+    using ServiceDiscovery;
 
     public static class OcelotBuilderExtensions
     {

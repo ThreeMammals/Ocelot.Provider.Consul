@@ -55,7 +55,7 @@
         {
             try
             {
-                _ocelotBuilder.AddStoreOcelotConfigurationInConsul();
+                _ocelotBuilder.AddConsul().AddConsulConfigurationPoller();
             }
             catch (Exception e)
             {

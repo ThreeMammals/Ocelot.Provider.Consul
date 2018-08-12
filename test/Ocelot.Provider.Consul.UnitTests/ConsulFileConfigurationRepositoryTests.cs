@@ -11,12 +11,10 @@
     using Configuration.File;
     using Configuration.Repository;
     using global::Consul;
-    using Infrastructure.Consul;
     using Logging;
     using Moq;
     using Newtonsoft.Json;
     using Responses;
-    using ServiceDiscovery.Configuration;
     using Shouldly;
     using TestStack.BDDfy;
     using Xunit;
