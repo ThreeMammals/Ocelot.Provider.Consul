@@ -4,7 +4,7 @@
     <RuntimeFrameworkVersion>2.0.0</RuntimeFrameworkVersion>
     <NETStandardImplicitPackageVersion>2.0.0</NETStandardImplicitPackageVersion>
     <NoPackageAnalysis>true</NoPackageAnalysis>
-    <Description>Provides Ocelot extensions to use CacheManager.Net</Description>
+    <Description>Provides Ocelot extensions to use Consul</Description>
     <AssemblyTitle>Ocelot.Provider.Consul</AssemblyTitle>
     <VersionPrefix>0.0.0-dev</VersionPrefix>
     <AssemblyName>Ocelot.Provider.Consul</AssemblyName>
