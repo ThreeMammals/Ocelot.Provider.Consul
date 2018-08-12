@@ -26,6 +26,4 @@
             return consulServiceDiscoveryProvider;
         };
     }
-
-    public delegate Task OcelotMiddlewareConfigurationDelegate(IApplicationBuilder builder);
 }

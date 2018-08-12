@@ -9,6 +9,7 @@
     using Microsoft.AspNetCore.Builder;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Options;
+    using Middleware;
     using Responses;
 
     public static class ConsulMiddlewareConfigurationProvider

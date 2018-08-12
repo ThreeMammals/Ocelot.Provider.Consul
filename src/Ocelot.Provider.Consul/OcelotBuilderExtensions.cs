@@ -3,6 +3,7 @@
     using Configuration.Repository;
     using DependencyInjection;
     using Microsoft.Extensions.DependencyInjection;
+    using Middleware;
     using ServiceDiscovery;
 
     public static class OcelotBuilderExtensions
