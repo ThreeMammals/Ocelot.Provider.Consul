@@ -29,7 +29,7 @@
             };
 
             builder.Services.AddSingleton<ServiceDiscoveryFinderDelegate>(app);
-            builder.Services.TryAddSingleton<IConsulClientFactory, ConsulClientFactory>();
+            builder.Services.AddSingleton<IConsulClientFactory, ConsulClientFactory>();
             return builder;
         }
 

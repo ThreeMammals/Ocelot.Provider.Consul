@@ -114,7 +114,7 @@
                 })
                 .ConfigureServices(s =>
                 {
-                    s.AddOcelot();
+                    s.AddOcelot().AddConsul();
                 })
                 .Configure(app =>
                 {
@@ -125,6 +125,7 @@
 
             _ocelotClient = _ocelotServer.CreateClient();
         }
+
         public void GivenOcelotIsRunningUsingConsulToStoreConfig()
         {
             _webHostBuilder = new WebHostBuilder();
@@ -141,7 +142,7 @@
                 })
                 .ConfigureServices(s =>
                 {
-                    s.AddOcelot().AddStoreOcelotConfigurationInConsul();
+                    s.AddOcelot().AddConsul().AddConsulConfigurationPoller();
                 })
                 .Configure(app =>
                 {
