@@ -14,7 +14,7 @@
     public class PollingConsulServiceDiscoveryProviderTests
     {
         private readonly int _delay;
-        private PollingConsulServiceDiscoveryProvider _provider;
+        private PollConsul _provider;
         private readonly List<Service> _services;
         private readonly Mock<IOcelotLoggerFactory> _factory;
         private readonly Mock<IOcelotLogger> _logger;
@@ -27,7 +27,7 @@
             _delay = 1;
             _factory = new Mock<IOcelotLoggerFactory>();
             _logger = new Mock<IOcelotLogger>();
-            _factory.Setup(x => x.CreateLogger<PollingConsulServiceDiscoveryProvider>()).Returns(_logger.Object);
+            _factory.Setup(x => x.CreateLogger<PollConsul>()).Returns(_logger.Object);
             _consulServiceDiscoveryProvider = new Mock<IServiceDiscoveryProvider>();
         }
 
@@ -55,7 +55,7 @@
 
         private void WhenIGetTheServices(int expected)
         {
-            _provider = new PollingConsulServiceDiscoveryProvider(_delay, _factory.Object, _consulServiceDiscoveryProvider.Object);
+            _provider = new PollConsul(_delay, _factory.Object, _consulServiceDiscoveryProvider.Object);
 
             var result = Wait.WaitFor(3000).Until(() => {
                 try

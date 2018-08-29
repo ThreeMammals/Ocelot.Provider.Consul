@@ -19,7 +19,7 @@
     {
         private IWebHost _fakeConsulBuilder;
         private readonly List<ServiceEntry> _serviceEntries;
-        private ConsulServiceDiscoveryProvider _provider;
+        private Consul _provider;
         private readonly string _serviceName;
         private readonly int _port;
         private readonly string _consulHost;
@@ -40,10 +40,10 @@
             _factory = new Mock<IOcelotLoggerFactory>();
             _clientFactory = new ConsulClientFactory();
             _logger = new Mock<IOcelotLogger>();
-            _factory.Setup(x => x.CreateLogger<ConsulServiceDiscoveryProvider>()).Returns(_logger.Object);
-            _factory.Setup(x => x.CreateLogger<PollingConsulServiceDiscoveryProvider>()).Returns(_logger.Object);
+            _factory.Setup(x => x.CreateLogger<Consul>()).Returns(_logger.Object);
+            _factory.Setup(x => x.CreateLogger<PollConsul>()).Returns(_logger.Object);
             var config = new ConsulRegistryConfiguration(_consulHost, _port, _serviceName, null);
-            _provider = new ConsulServiceDiscoveryProvider(config, _factory.Object, _clientFactory);
+            _provider = new Consul(config, _factory.Object, _clientFactory);
         }
 
         [Fact]
@@ -73,7 +73,7 @@
         {
             var token = "test token";
             var config = new ConsulRegistryConfiguration(_consulHost, _port, _serviceName, token);
-            _provider = new ConsulServiceDiscoveryProvider(config, _factory.Object, _clientFactory);
+            _provider = new Consul(config, _factory.Object, _clientFactory);
 
             var serviceEntryOne = new ServiceEntry()
             {
