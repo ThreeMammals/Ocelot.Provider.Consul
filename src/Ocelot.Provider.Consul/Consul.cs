@@ -10,16 +10,17 @@
     using ServiceDiscovery.Providers;
     using Values;
 
-    public class ConsulServiceDiscoveryProvider : IServiceDiscoveryProvider
+
+    public class Consul : IServiceDiscoveryProvider
     {
         private readonly ConsulRegistryConfiguration _config;
         private readonly IOcelotLogger _logger;
         private readonly IConsulClient _consul;
         private const string VersionPrefix = "version-";
 
-        public ConsulServiceDiscoveryProvider(ConsulRegistryConfiguration config, IOcelotLoggerFactory factory, IConsulClientFactory clientFactory)
+        public Consul(ConsulRegistryConfiguration config, IOcelotLoggerFactory factory, IConsulClientFactory clientFactory)
         {
-            _logger = factory.CreateLogger<ConsulServiceDiscoveryProvider>();
+            _logger = factory.CreateLogger<Consul>();
             _config = config;
             _consul = clientFactory.Get(_config);
         }

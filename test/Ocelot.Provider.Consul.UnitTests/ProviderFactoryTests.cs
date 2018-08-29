@@ -17,8 +17,8 @@
             var services = new ServiceCollection();
             var loggerFactory = new Mock<IOcelotLoggerFactory>();
             var logger = new Mock<IOcelotLogger>();
-            loggerFactory.Setup(x => x.CreateLogger<ConsulServiceDiscoveryProvider>()).Returns(logger.Object);
-            loggerFactory.Setup(x => x.CreateLogger<PollingConsulServiceDiscoveryProvider>()).Returns(logger.Object);
+            loggerFactory.Setup(x => x.CreateLogger<Consul>()).Returns(logger.Object);
+            loggerFactory.Setup(x => x.CreateLogger<PollConsul>()).Returns(logger.Object);
             var consulFactory = new Mock<IConsulClientFactory>();
             services.AddSingleton<IConsulClientFactory>(consulFactory.Object);
             services.AddSingleton<IOcelotLoggerFactory>(loggerFactory.Object);
@@ -29,7 +29,7 @@
         public void should_return_ConsulServiceDiscoveryProvider()
         {
             var provider = ConsulProviderFactory.Get(_provider, new ServiceProviderConfiguration("", "", 1, "", "", 1), "");
-            provider.ShouldBeOfType<ConsulServiceDiscoveryProvider>();
+            provider.ShouldBeOfType<Consul>();
         }
 
         [Fact]
@@ -37,7 +37,7 @@
         {
             var stopsPollerFromPolling = 10000;
             var provider = ConsulProviderFactory.Get(_provider, new ServiceProviderConfiguration("pollconsul", "", 1, "", "", stopsPollerFromPolling), "");
-            provider.ShouldBeOfType<PollingConsulServiceDiscoveryProvider>();
+            provider.ShouldBeOfType<PollConsul>();
         }
     }
 }

@@ -16,11 +16,11 @@
 
             var consulRegistryConfiguration = new ConsulRegistryConfiguration(config.Host, config.Port, name, config.Token);
 
-            var consulServiceDiscoveryProvider = new ConsulServiceDiscoveryProvider(consulRegistryConfiguration, factory, consulFactory);
+            var consulServiceDiscoveryProvider = new Consul(consulRegistryConfiguration, factory, consulFactory);
 
             if (config.Type?.ToLower() == "pollconsul")
             {
-                return new PollingConsulServiceDiscoveryProvider(config.PollingInterval, factory, consulServiceDiscoveryProvider);
+                return new PollConsul(config.PollingInterval, factory, consulServiceDiscoveryProvider);
             }
 
             return consulServiceDiscoveryProvider;
