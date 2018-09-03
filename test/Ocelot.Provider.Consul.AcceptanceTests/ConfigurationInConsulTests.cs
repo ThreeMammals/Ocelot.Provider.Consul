@@ -366,8 +366,9 @@ namespace Ocelot.Provider.Consul.AcceptanceTests
                                         var base64 = Convert.ToBase64String(bytes);
 
                                         var kvp = new FakeConsulGetResponse(base64);
-
-                                        await context.Response.WriteJsonAsync(new FakeConsulGetResponse[] { kvp });
+                                        json = JsonConvert.SerializeObject(new FakeConsulGetResponse[] { kvp });
+                                        context.Response.Headers.Add("Content-Type", "application/json");
+                                        await context.Response.WriteAsync(json);
                                     }
                                     else if (context.Request.Method.ToLower() == "put" && context.Request.Path.Value == "/v1/kv/InternalConfiguration")
                                     {
@@ -391,7 +392,9 @@ namespace Ocelot.Provider.Consul.AcceptanceTests
                                     }
                                     else if (context.Request.Path.Value == $"/v1/health/service/{serviceName}")
                                     {
-                                        await context.Response.WriteJsonAsync(_consulServices);
+                                        var json = JsonConvert.SerializeObject(_consulServices);
+                                        context.Response.Headers.Add("Content-Type", "application/json");
+                                        await context.Response.WriteAsync(json);
                                     }
                                 });
                             })
@@ -452,17 +455,17 @@ namespace Ocelot.Provider.Consul.AcceptanceTests
                 throw new NotImplementedException();
             }
 
-            public void AddAndDelete(string key, FileConfiguration value, TimeSpan ttl, string region)
-            {
-                throw new NotImplementedException();
-            }
-
             public FileConfiguration Get(string key, string region)
             {
                 throw new NotImplementedException();
             }
 
             public void ClearRegion(string region)
+            {
+                throw new NotImplementedException();
+            }
+
+            public void AddAndDelete(string key, FileConfiguration value, TimeSpan ttl, string region)
             {
                 throw new NotImplementedException();
             }

@@ -6,6 +6,7 @@
     using Configuration.File;
     using global::Consul;
     using Microsoft.AspNetCore.Http;
+    using Newtonsoft.Json;
     using TestStack.BDDfy;
     using Xunit;
 
@@ -97,7 +98,9 @@
             {
                 if (context.Request.Path.Value == "/v1/health/service/product")
                 {
-                    await context.Response.WriteJsonAsync(_serviceEntries);
+                    var json = JsonConvert.SerializeObject(_serviceEntries);
+                    context.Response.Headers.Add("Content-Type", "application/json");
+                    await context.Response.WriteAsync(json);
                 }
             });
         }

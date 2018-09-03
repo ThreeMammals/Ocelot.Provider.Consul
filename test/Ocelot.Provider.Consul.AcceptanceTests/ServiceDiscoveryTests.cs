@@ -7,6 +7,7 @@
     using Configuration.File;
     using global::Consul;
     using Microsoft.AspNetCore.Http;
+    using Newtonsoft.Json;
     using Shouldly;
     using TestStack.BDDfy;
     using Xunit;
@@ -72,7 +73,6 @@
                             UpstreamHttpMethod = new List<string> { "Get" },
                             ServiceName = serviceName,
                             LoadBalancerOptions = new FileLoadBalancerOptions { Type = "LeastConnection" },
-                            UseServiceDiscovery = true,
                         }
                     },
                 GlobalConfiguration = new FileGlobalConfiguration()
@@ -128,7 +128,6 @@
                             UpstreamHttpMethod = new List<string> { "Get", "Options" },
                             ServiceName = serviceName,
                             LoadBalancerOptions = new FileLoadBalancerOptions { Type = "LeastConnection" },
-                            UseServiceDiscovery = true,
                         }
                     },
                 GlobalConfiguration = new FileGlobalConfiguration()
@@ -299,7 +298,6 @@
                             UpstreamHttpMethod = new List<string> { "Get", "Options" },
                             ServiceName = serviceName,
                             LoadBalancerOptions = new FileLoadBalancerOptions { Type = "LeastConnection" },
-                            UseServiceDiscovery = true,
                         }
                     },
                 GlobalConfiguration = new FileGlobalConfiguration()
@@ -368,7 +366,6 @@
                             UpstreamHttpMethod = new List<string> { "Get" },
                             ServiceName = serviceName,
                             LoadBalancerOptions = new FileLoadBalancerOptions { Type = "LeastConnection" },
-                            UseServiceDiscovery = true,
                         }
                     },
                 GlobalConfiguration = new FileGlobalConfiguration()
@@ -434,7 +431,6 @@
                             UpstreamHttpMethod = new List<string> { "Get", "Options" },
                             ServiceName = serviceName,
                             LoadBalancerOptions = new FileLoadBalancerOptions { Type = "LeastConnection" },
-                            UseServiceDiscovery = true,
                         }
                     },
                 GlobalConfiguration = new FileGlobalConfiguration()
@@ -512,8 +508,9 @@
                     {
                         _receivedToken = values.First();
                     }
-
-                    await context.Response.WriteJsonAsync(_consulServices);
+                    var json = JsonConvert.SerializeObject(_consulServices);
+                    context.Response.Headers.Add("Content-Type", "application/json");
+                    await context.Response.WriteAsync(json);
                 }
             });
         }

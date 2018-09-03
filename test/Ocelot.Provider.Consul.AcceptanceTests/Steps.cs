@@ -15,7 +15,6 @@
     using Configuration.File;
     using Configuration.Repository;
     using DependencyInjection;
-    using IdentityServer4.AccessTokenValidation;
     using Infrastructure;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
