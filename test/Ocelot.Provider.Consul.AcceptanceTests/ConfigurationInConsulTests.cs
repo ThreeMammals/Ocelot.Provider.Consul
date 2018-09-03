@@ -254,20 +254,20 @@ namespace Ocelot.Provider.Consul.AcceptanceTests
             var consulConfig = new FileConfiguration
             {
                 DynamicReRoutes = new List<FileDynamicReRoute>
+                {
+                    new FileDynamicReRoute
                     {
-                        new FileDynamicReRoute
+                        ServiceName = serviceName,
+                        RateLimitRule = new FileRateLimitRule()
                         {
-                            ServiceName = serviceName,
-                            RateLimitRule = new FileRateLimitRule()
-                            {
-                                EnableRateLimiting = true,
-                                ClientWhitelist = new List<string>(),
-                                Limit = 3,
-                                Period = "1s",
-                                PeriodTimespan = 1000
-                            }
+                            EnableRateLimiting = true,
+                            ClientWhitelist = new List<string>(),
+                            Limit = 3,
+                            Period = "1s",
+                            PeriodTimespan = 1000
                         }
-                    },
+                    }
+                },
                 GlobalConfiguration = new FileGlobalConfiguration
                 {
                     ServiceDiscoveryProvider = new FileServiceDiscoveryProvider

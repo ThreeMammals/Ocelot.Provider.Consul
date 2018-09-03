@@ -186,12 +186,6 @@
                         AllowAutoRedirect = true,
                         UseCookieContainer = true,
                         UseTracing = false
-                    },
-                    QoSOptions = new FileQoSOptions
-                    {
-                        TimeoutValue = 100,
-                        DurationOfBreak = 1000,
-                        ExceptionsAllowedBeforeBreaking = 1
                     }
                 }
             };
