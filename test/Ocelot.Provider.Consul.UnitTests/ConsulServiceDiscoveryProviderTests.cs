@@ -10,6 +10,7 @@
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
     using Moq;
+    using Newtonsoft.Json;
     using Shouldly;
     using TestStack.BDDfy;
     using Values;
@@ -276,7 +277,9 @@
                                 _receivedToken = values.First();
                             }
 
-                            await context.Response.WriteJsonAsync(_serviceEntries);
+                            var json = JsonConvert.SerializeObject(_serviceEntries);
+                            context.Response.Headers.Add("Content-Type", "application/json");
+                            await context.Response.WriteAsync(json);
                         }
                     });
                 })

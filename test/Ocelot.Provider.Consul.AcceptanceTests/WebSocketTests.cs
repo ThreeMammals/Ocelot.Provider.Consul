@@ -9,6 +9,7 @@
     using Configuration.File;
     using global::Consul;
     using Microsoft.AspNetCore.Http;
+    using Newtonsoft.Json;
     using Shouldly;
     using TestStack.BDDfy;
     using Xunit;
@@ -76,7 +77,6 @@
                         DownstreamScheme = "ws",
                         LoadBalancerOptions = new FileLoadBalancerOptions { Type = "RoundRobin" },
                         ServiceName = serviceName,
-                        UseServiceDiscovery = true
                     }
                 },
                 GlobalConfiguration = new FileGlobalConfiguration
@@ -130,7 +130,9 @@
             {
                 if (context.Request.Path.Value == $"/v1/health/service/{serviceName}")
                 {
-                    await context.Response.WriteJsonAsync(_serviceEntries);
+                     var json = JsonConvert.SerializeObject(_serviceEntries);
+                    context.Response.Headers.Add("Content-Type", "application/json");
+                    await context.Response.WriteAsync(json);
                 }
             });
         }
