@@ -26,7 +26,7 @@ All versions can be found [here](https://www.nuget.org/packages/Ocelot.Provider.
 
 ## Documentation
 
-Please click [here](http://ocelot.readthedocs.io/en/latest/features/servicediscovery.html) for the Ocleot serviec discovery documentation and [here](http://ocelot.readthedocs.io/en/latest/features/configuration.html#store-configuration-in-consul) for storing configuration in Consul. This includes lots of information and will be helpful if you want to understand the features Ocelot currently offers.
+Please click [here](http://ocelot.readthedocs.io/en/latest/features/servicediscovery.html) for the Ocelot service discovery documentation and [here](http://ocelot.readthedocs.io/en/latest/features/configuration.html#store-configuration-in-consul) for storing configuration in Consul. This includes lots of information and will be helpful if you want to understand the features Ocelot currently offers.
 
 ## Contributing
 
